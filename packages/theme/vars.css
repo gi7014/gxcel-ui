@@ -1,0 +1,65 @@
+:root {
+    /* Colors */
+    --g-color-white: #ffffff;
+    --g-color-black: #000000;
+    --colors: (primary: #dd7694, success: #9ebc19, warning: #b49b7f, danger: #e94829, info: #92897b);
+    --g-bg-color: #ffffff;
+    --g-bg-color-page: #f2f3f5;
+    --g-bg-color-overlay: #ffffff;
+    --g-text-color-primary: #303133;
+    --g-text-color-regular: #606266;
+    --g-text-color-secondary: #909399;
+    --g-text-color-placeholder: #a8abb2;
+    --g-text-color-disabled: #c0c4cc;
+    --g-border-color: #dcdfe6;
+    --g-border-color-light: #e4e7ed;
+    --g-border-color-lighter: #ebeef5;
+    --g-border-color-extra-light: #f2f6fc;
+    --g-border-color-dark: #d4d7de;
+    --g-border-color-darker: #cdd0d6;
+    --g-fill-color: #f0f2f5;
+    --g-fill-color-light: #f5f7fa;
+    --g-fill-color-lighter: #fafafa;
+    --g-fill-color-extra-light: #fafcff;
+    --g-fill-color-dark: #ebedf0;
+    --g-fill-color-darker: #e6e8eb;
+    --g-fill-color-blank: #ffffff;
+
+    @each $val, $color in var(--colors) {
+        --g-color-$(val): $(color);
+        @for $i from 3 to 9 {
+            --g-color-$(val)-light-$(i): mix(#fff, $(color), 0.$(i));
+        }
+        --g-color-$(val)-dark-2: mix(#000, $(color), 0.2);
+    }
+
+    /* border */
+    --g-border-width: 1px;
+    --g-border-style: solid;
+    --g-border-color-hover: var(--g-text-color-disabled);
+    --g-border: var(--g-border-width) var(--g-border-style) var(--g-border-color);
+    --g-border-radius-base: 10px;
+    --g-border-radius-small: 6px;
+    --g-border-radius-round: 20px;
+    --g-border-radius-circle: 100%;
+
+    /* font */
+    --g-font-size-extra-large: 20px;
+    --g-font-size-large: 18px;
+    --g-font-size-medium: 16px;
+    --g-font-size-base: 14px;
+    --g-font-size-small: 13px;
+    --g-font-size-extra-small: 12px;
+    --g-font-family: 'HarmonyOS Sans SC', 'PingFang SC';
+    --g-font-weight-primary: 500;
+
+    /* disabled */
+    --g-disabled-bg-color: var(--g-fill-color-light);
+    --g-disabled-text-color: var(--g-text-color-placeholder);
+    --g-disabled-border-color: var(--g-border-color-light);
+
+    /* animation */
+    --g-transition-duration: 0.4s;
+    --g-transition-duration-fast: 0.2s;
+    --g-transition-duration-slow: 0.5s;
+}

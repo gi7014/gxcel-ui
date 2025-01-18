@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "pnpm --filter @gxcel-ui/play dev",
+    "story": "pnpm --filter @gxcel-ui/play storybook",
     "docs:dev": "pnpm --filter @gxcel-ui/docs dev",
     "docs:build": "pnpm --filter @gxcel-ui/docs build",
     "test": "pnpm --filter @gxcel-ui/components test"

@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "pnpm --filter @gxcel-ui/play dev",
+    "docs:dev": "pnpm --filter @gxcel-ui/docs dev",
+    "docs:build": "pnpm --filter @gxcel-ui/docs build"
   },
   "keywords": [],
   "author": "",

@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <g-button />
+  <g-button type="success" color="#f1f3f5">Test Button</g-button>
 </template>
 
 <style scoped>

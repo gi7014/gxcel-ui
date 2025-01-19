@@ -1,0 +1,17 @@
+.g-icon {
+    --g-icon-color: inherit;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    fill: currentColor;
+    color: var(--g-icon-color);
+    font-size: inherit;
+}
+
+@each $val in primary, success, warning, info, danger {
+  .g-icon--$(val) {
+    --g-icon-color: var(--g-color-$(val));
+  }
+}
+

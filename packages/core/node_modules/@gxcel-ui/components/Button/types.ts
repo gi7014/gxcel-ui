@@ -1,16 +1,18 @@
-import type { Component, Ref, Slot } from "vue";
+import type { Component, Ref } from "vue";
 
 export type ButtonType = 'primary' | 'success' | 'warning' | 'danger' | 'info';
 export type NativeType = 'button' | 'submit' | 'reset';
 export type ButtonSize = 'large' | 'default' | 'small';
+export type ButtonAnimation = 'scale' | 'heartbeat';
 
 export interface ButtonProps {
     tag?: string | Component;
     type?: ButtonType;
     nativeType?: NativeType;
     size?: ButtonSize;
-    icon?: Slot | string;
-    loadingIcon?: Slot | string;
+    icon?: Component | string;
+    loadingIcon?: Component | string;
+    animation?: ButtonAnimation;
     disabled?: boolean;
     loading?: boolean;
     plain?: boolean;

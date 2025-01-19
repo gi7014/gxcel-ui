@@ -1,5 +1,6 @@
 .g-button {
   --g-button-font-weight: var(--g-font-weight-primary);
+  --g-button-font-family: var(--g-font-family);
   --g-button-border-color: var(--g-border-color);
   --g-button-bg-color: var(--g-fill-color-blank);
   --g-button-text-color: var(--g-text-color-regular);
@@ -39,11 +40,11 @@
   padding: 8px 15px;
   font-size: var(--g-font-size-base);
   border-radius: var(--g-border-radius-base);
+  transition: all var(--g-transition-duration) var(--g-transition-curve-ease);
   & + & {
     margin-left: 12px;
   }
-  &:hover,
-  &:focus {
+  &:hover {
     color: var(--g-button-hover-text-color);
     border-color: var(--g-button-hover-border-color);
     background-color: var(--g-button-hover-bg-color);
@@ -51,7 +52,6 @@
   }
   &:active {
     color: var(--g-button-active-text-color);
-    border-color: var(--g-button-active-border-color);
     background-color: var(--g-button-active-bg-color);
     outline: none;
   }
@@ -60,6 +60,13 @@
     --g-button-hover-text-color: var(--g-color-primary);
     --g-button-hover-bg-color: var(--g-fill-color-blank);
     --g-button-hover-border-color: var(--g-color-primary);
+  }
+  /* text */
+  &.is-text {
+    --g-button-hover-bg-color: transparent;
+    --g-button-hover-text-color: var(--g-text-color-secondary);
+    --g-button-hover-bg-color: var(--g-fill-color);
+    border: none;
   }
   /*round*/
   &.is-round {
@@ -83,6 +90,10 @@
     background-image: none;
     background-color: var(--g-button-disabled-bg-color);
     border-color: var(--g-button-disabled-border-color);
+    > * {
+      animation: none;
+    }
+    transform: none;
   }
   [class*="g-icon"] {
     width: 1em;
@@ -119,6 +130,13 @@
     --g-button-disabled-bg-color: var(--g-color-$(val)-light-9);
     --g-button-disabled-border-color: var(--g-color-$(val)-light-8);
   }
+  .g-button--$(val).is-text {
+    --g-button-text-color: var(--g-color-$(val));
+    --g-button-bg-color: transparent;
+    --g-button-hover-text-color: var(--g-color-white);
+    --g-button-hover-bg-color: var(--g-color-$(val));
+    --g-button-active-bg-color: var(--g-color-$(val)-dark-2);
+  }
 }
 
 .g-button--large {
@@ -147,5 +165,45 @@
   [class*="g-icon"] {
     width: 12px;
     height: 12px;
+  }
+}
+
+.g-button--scale {
+  &:active {
+    transform: scale(0.9);
+  }
+}
+.g-button--heartbeat {
+  transition: transform 400ms cubic-bezier(0.68, -0.55, 0.27, 2.5),
+    border-color 400ms ease-in-out, background-color 400ms ease-in-out,
+    color 400ms ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+    > * {
+      animation: beatingHeart 1.2s infinite;
+    }
+    @keyframes beatingHeart {
+      0% {
+        transform: scale(1);
+      }
+      15% {
+        transform: scale(1.1);
+      }
+      30% {
+        transform: scale(1);
+      }
+      45% {
+        transform: scale(1.1);
+      }
+      60% {
+        transform: scale(1);
+      }
+    }
+  }
+  &:active {
+    transform: scale(0.95);
+    > * {
+      animation: none;
+    }
   }
 }

@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'HarmonyOS Sans SC';
+    src: url('./fonts/HarmonyOS_SansSC.ttf'),
+}
+
 :root {
     /* Colors */
     --g-color-white: #ffffff;
@@ -59,7 +64,9 @@
     --g-disabled-border-color: var(--g-border-color-light);
 
     /* animation */
-    --g-transition-duration: 0.4s;
+    --g-transition-duration: 0.3s;
     --g-transition-duration-fast: 0.2s;
     --g-transition-duration-slow: 0.5s;
+    --g-transition-curve: cubic-bezier(0.645, 0.045, 0.355, 1);
+    --g-transition-curve-ease: ease;
 }

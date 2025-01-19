@@ -20,22 +20,49 @@ const meta: Meta<typeof GButton> = {
     },
     nativeType: {
       control: { type: "select" },
-      options: ["button", "submit", "reset"]
+      options: ["button", "submit", "reset"],
     },
     tag: {
       control: { type: "select" },
       options: ["button", "a", "div"],
     },
     icon: {
-      control: { type: "text" }
+      control: { type: "text" },
     },
     loadingIcon: {
-      control: { type: "text" }
+      control: { type: "text" },
     },
     animation: {
       control: { type: "select" },
-      options: ["scale", "heartbeat", ""],
-    }
+      options: ["scale", "heartbeat", "fly", ""],
+    },
+    width: {
+      control: { type: "text" },
+    },
+    height: {
+      control: { type: "text" },
+    },
+    iconSize: {
+      control: { type: "select" },
+      options: [
+        "2xs",
+        "xs",
+        "sm",
+        "lg",
+        "xl",
+        "2xl",
+        "1x",
+        "2x",
+        "3x",
+        "4x",
+        "5x",
+        "6x",
+        "7x",
+        "8x",
+        "9x",
+        "",
+      ],
+    },
   },
   args: { onClick: fn() },
 };
@@ -64,12 +91,12 @@ export const Default: Story & { args: { content: string } } = {
   }),
 
   play: async ({ canvasElement, args, step }) => {
-    const canvas = within(canvasElement)
-    await step('click btn', async() => {
-      await userEvent.click(canvas.getByRole('button'))
-    })
+    const canvas = within(canvasElement);
+    await step("click btn", async () => {
+      await userEvent.click(canvas.getByRole("button"));
+    });
 
-    expect(args.onClick).toHaveBeenCalled()
+    expect(args.onClick).toHaveBeenCalled();
   },
 };
 

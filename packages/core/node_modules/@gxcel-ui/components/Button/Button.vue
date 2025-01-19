@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
 import type { ButtonProps, ButtonEmits, ButtonInstance } from './types'
+import { ref, computed } from 'vue'
 import { throttle } from 'lodash-es'
 import GIcon from '../Icon/Icon.vue'
 
@@ -32,6 +32,11 @@ const iconStyle = computed(() => ({
     marginRight: slots.default ? '6px' : '0px'
 }))
 
+const customStyles = computed(() => ({
+    width: props.width || undefined,
+    height: props.height || undefined,
+}))
+
 const handleBtnClick = (e: MouseEvent) => emits('click', e)
 const handleBtnClickThrottle = throttle(handleBtnClick, props.throttleDuration)
 
@@ -42,11 +47,11 @@ defineExpose<ButtonInstance>({
 
 <template>
     <component ref="_ref" class="g-button" :is="props.tag" :autofocus="autofocus"
-        :type="tag === 'button' ? nativeType : void 0" :disabled="disabled || loading ? true : void 0" :class="{
+        :type="tag === 'button' ? nativeType : void 0" :disabled="disabled || loading ? true : void 0"
+        :style="customStyles" :class="{
             [`g-button--${type}`]: type,
             [`g-button--${size}`]: size,
             [`g-button--${animation}`]: animation,
-            'g-button--color': color,
             'is-plain': plain,
             'is-text': text,
             'is-round': round,
@@ -54,18 +59,20 @@ defineExpose<ButtonInstance>({
             'is-loading': loading,
             'is-disabled': disabled
         }" @click="(e: MouseEvent) =>
-                useThrottle ? handleBtnClickThrottle(e) : handleBtnClick(e)
+            useThrottle ? handleBtnClickThrottle(e) : handleBtnClick(e)
             ">
-        <template v-if="loading">
+        <template v-if="loading && props.animation !== 'fly'">
             <slot name="loading">
                 <g-icon class="loading-icon" :style="iconStyle" :icon="loadingIcon ?? 'spinner'" size="1x"
                     spin></g-icon>
             </slot>
         </template>
 
-        <g-icon v-if="icon && !loading" :icon="icon" size="1x" :style="iconStyle" />
-
+        <g-icon v-if="icon && (!loading || props.animation === 'fly')" :icon="icon" :size="props.iconSize ?? '1x'"
+            :style="iconStyle" />
+        <span>
             <slot></slot>
+        </span>
     </component>
 </template>
 

@@ -2,5 +2,5 @@
 </script>
 
 <template>
-  <g-button>Test Button</g-button>
+  <g-button icon="star" animation="heartbeat" text width="40px" height="40px"></g-button>
 </template>

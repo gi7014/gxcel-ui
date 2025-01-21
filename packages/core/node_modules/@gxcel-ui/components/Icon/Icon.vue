@@ -11,10 +11,14 @@ defineOptions({
 
 const props = defineProps<IconProps>()
 
-const filterProps = computed(() => omit(props, ['type', 'color']))
+const slots = defineSlots()
+
+const filterProps = computed(() => omit(props, ['type', 'color', 'width', 'height']))
 
 const customStyles = computed(() => ({
-    color: props.color || undefined
+    color: props.color || undefined,
+    width: props.width || undefined,
+    height: props.height || undefined
 }))
 
 </script>
@@ -22,7 +26,8 @@ const customStyles = computed(() => ({
 <template>
     <i class="g-icon" :class="[`g-icon--${props.type}`]" :style="customStyles"
         v-bind="{ ...$attrs }">
-        <font-awesome-icon v-bind="filterProps" />
+        <font-awesome-icon v-bind="filterProps" v-if="!slots.icon"/>
+        <slot name="icon"></slot>
     </i>
 </template>
 

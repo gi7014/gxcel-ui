@@ -42,4 +42,6 @@ export interface IconProps {
     spinReverse?: boolean;
     type?: 'primary' | 'success' | 'warning' | 'danger' | 'info';
     color?: string;
+    width?: string | number;
+    height?: string | number;
 }

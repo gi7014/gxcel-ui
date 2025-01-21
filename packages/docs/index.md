@@ -5,14 +5,14 @@ layout: home
 hero:
   name: "Gxcel-UI"
   text: "Gxcel 组件库"
-  tagline: My great project tagline
+  tagline: 一款为动画而生的VUE UI组件库
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: 快速上手
+      link: /guide/design
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: 更多组件
+      link: /components/button
 
 features:
   - title: Feature A

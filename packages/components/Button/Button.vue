@@ -72,6 +72,7 @@ defineExpose<ButtonInstance>({
             :style="iconStyle" />
         <span>
             <slot></slot>
+            <slot name="icon"></slot>
         </span>
     </component>
 </template>

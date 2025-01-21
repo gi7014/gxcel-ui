@@ -1,0 +1,82 @@
+{
+  "hash": "82692caf",
+  "configHash": "7b899d9e",
+  "lockfileHash": "04b84e46",
+  "browserHash": "b0df89f5",
+  "optimized": {
+    "vue": {
+      "src": "../../../../../node_modules/.pnpm/vue@3.5.13_typescript@5.6.3/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "1ea3ef46",
+      "needsInterop": false
+    },
+    "vitepress > @vue/devtools-api": {
+      "src": "../../../../../node_modules/.pnpm/@vue+devtools-api@7.7.0/node_modules/@vue/devtools-api/dist/index.js",
+      "file": "vitepress___@vue_devtools-api.js",
+      "fileHash": "1ea36426",
+      "needsInterop": false
+    },
+    "vitepress > @vueuse/core": {
+      "src": "../../../../../node_modules/.pnpm/@vueuse+core@10.11.1_vue@3.5.13_typescript@5.6.3_/node_modules/@vueuse/core/index.mjs",
+      "file": "vitepress___@vueuse_core.js",
+      "fileHash": "ade5b37d",
+      "needsInterop": false
+    },
+    "@theme/index": {
+      "src": "../../../../../node_modules/.pnpm/vitepress@1.0.0-rc.44_@algolia+client-search@5.19.0_@types+node@20.17.14_async-validator@4.2._4uikx5hdnbcxorkbqdziirlnxu/node_modules/vitepress/dist/client/theme-default/index.js",
+      "file": "@theme_index.js",
+      "fileHash": "2b062cec",
+      "needsInterop": false
+    },
+    "ag-grid-vue3": {
+      "src": "../../../../../node_modules/.pnpm/ag-grid-vue3@33.0.4_vue@3.5.13_typescript@5.6.3_/node_modules/ag-grid-vue3/dist/main.mjs",
+      "file": "ag-grid-vue3.js",
+      "fileHash": "28a32dfa",
+      "needsInterop": false
+    },
+    "ag-grid-community": {
+      "src": "../../../../../node_modules/.pnpm/ag-grid-community@33.0.4/node_modules/ag-grid-community/dist/package/main.esm.mjs",
+      "file": "ag-grid-community.js",
+      "fileHash": "335524bc",
+      "needsInterop": false
+    },
+    "@fortawesome/fontawesome-svg-core": {
+      "src": "../../../../../node_modules/.pnpm/@fortawesome+fontawesome-svg-core@6.7.2/node_modules/@fortawesome/fontawesome-svg-core/index.mjs",
+      "file": "@fortawesome_fontawesome-svg-core.js",
+      "fileHash": "6262c2d6",
+      "needsInterop": false
+    },
+    "@fortawesome/free-solid-svg-icons": {
+      "src": "../../../../../node_modules/.pnpm/@fortawesome+free-solid-svg-icons@6.7.2/node_modules/@fortawesome/free-solid-svg-icons/index.mjs",
+      "file": "@fortawesome_free-solid-svg-icons.js",
+      "fileHash": "9aa8c170",
+      "needsInterop": false
+    },
+    "lodash-es": {
+      "src": "../../../../../node_modules/.pnpm/lodash-es@4.17.21/node_modules/lodash-es/lodash.js",
+      "file": "lodash-es.js",
+      "fileHash": "943487c1",
+      "needsInterop": false
+    },
+    "@fortawesome/vue-fontawesome": {
+      "src": "../../../../../node_modules/.pnpm/@fortawesome+vue-fontawesome@3.0.8_@fortawesome+fontawesome-svg-core@6.7.2_vue@3.5.13_typescript@5.6.3_/node_modules/@fortawesome/vue-fontawesome/index.es.js",
+      "file": "@fortawesome_vue-fontawesome.js",
+      "fileHash": "5efdbf50",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-5TCGG3HX": {
+      "file": "chunk-5TCGG3HX.js"
+    },
+    "chunk-WDFM2ZMZ": {
+      "file": "chunk-WDFM2ZMZ.js"
+    },
+    "chunk-KKZ4YDZW": {
+      "file": "chunk-KKZ4YDZW.js"
+    },
+    "chunk-7BFP2LLL": {
+      "file": "chunk-7BFP2LLL.js"
+    }
+  }
+}

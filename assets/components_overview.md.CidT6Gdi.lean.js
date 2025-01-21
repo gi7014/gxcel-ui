@@ -1,1 +1,0 @@
-import{_ as e,c as t,o}from"./chunks/framework.ibp0D89O.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"components/overview.md","filePath":"components/overview.md"}'),r={name:"components/overview.md"};function n(a,s,c,i,p,m){return o(),t("div")}const v=e(r,[["render",n]]);export{d as __pageData,v as default};

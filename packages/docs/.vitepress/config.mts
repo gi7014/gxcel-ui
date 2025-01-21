@@ -17,7 +17,24 @@ export default defineConfig({
     sidebar: useSideBar(),
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ]
+      { icon: 'github', link: 'https://github.com/gi7014/gxcel-ui' }
+    ],
+
+    outline: {
+      label: '内容'
+    },
+
+    lastUpdated: {
+      text: '最后更新于'
+    },
+
+    editLink: {
+      pattern: 'https://github.com/gi7014/gxcel-ui/edit/main/docs/:path',
+      text: '在 GitHub 上编辑此页'
+    },
+
+    search: {
+      provider: 'local'
+    }
   }
 })

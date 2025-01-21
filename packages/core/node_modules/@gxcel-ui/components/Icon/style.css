@@ -1,12 +1,12 @@
 .g-icon {
-    --g-icon-color: inherit;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    fill: currentColor;
-    color: var(--g-icon-color);
-    font-size: inherit;
+  --g-icon-color: inherit;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  fill: currentColor;
+  color: var(--g-icon-color);
+  font-size: inherit;
 }
 
 @each $val in primary, success, warning, info, danger {
@@ -15,3 +15,132 @@
   }
 }
 
+.g-icon__icon {
+  --g-icon-animation-curve: cubic-bezier(0.4, 0, 0.6, 1);
+  height: 1em;
+  width: 1em;
+  box-sizing: content-box;
+  &.is-spin {
+    animation: g-icon-spin 2s infinite linear;
+  }
+  &.is-border {
+    border: var(--g-border);
+    padding: 4px;
+  }
+  &.is-pulse {
+    animation: g-icon-spin 2s infinite steps(10);
+  }
+  &.is-inverse {
+    filter: invert(100%);
+  }
+  &.is-bounce {
+    animation: g-icon-bounce 1s infinite var(--g-icon-animation-curve);
+  }
+  &.is-shake {
+    animation: g-icon-shake 1s infinite var(--g-icon-animation-curve);
+  }
+  &.is-beat {
+    animation: g-icon-beat 1s infinite var(--g-icon-animation-curve);
+  }
+  &.is-fade {
+    animation: g-icon-fade 1s infinite var(--g-icon-animation-curve);
+  }
+  &.is-beat-fade {
+    animation: g-icon-bead-fade 1s infinite var(--g-icon-animation-curve);
+  }
+  @keyframes g-icon-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes g-icon-bounce {
+    0% {
+      transform: scale(1, 1) translateY(0);
+    }
+    10% {
+      transform: scale(1.1, 0.9) translateY(0);
+    }
+    30% {
+      transform: scale(0.9, 1.1) translateY(-0.5em);
+    }
+    50% {
+      transform: scale(1.05, 0.95) translateY(0);
+    }
+    57% {
+      transform: scale(1, 1) translateY(-0.125em);
+    }
+    64% {
+      transform: scale(1, 1) translateY(0);
+    }
+    100% {
+      transform: scale(1, 1) translateY(0);
+    }
+  }
+  @keyframes g-icon-shake {
+    0% {
+      transform: rotate(-15deg);
+    }
+    4% {
+      transform: rotate(15deg);
+    }
+    8%, 24% {
+      transform: rotate(-18deg);
+    }
+    12%, 28% {
+      transform: rotate(18deg);
+    }
+    16% {
+      transform: rotate(-22deg);
+    }
+    20% {
+      transform: rotate(22deg);
+    }
+    32% {
+      transform: rotate(-12deg);
+    }
+    36% {
+      transform: rotate(12deg);
+    }
+    40%, 100% {
+      transform: rotate(0);
+    }
+  }
+  @keyframes g-icon-beat {
+    0%, 90% {
+      transform: scale(1);
+    }
+    45% {
+      transform: scale(1.25);
+    }
+  }
+  @keyframes g-icon-fade {
+    50% {
+      opacity: 0.4;
+    }
+  }
+  @keyframes g-icon-bead-fade {
+    0%, 100% {
+      opacity: 0.4;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.125);
+    }
+  }
+}
+
+.g-icon__icon--horizontal {
+  transform: scaleX(-1);
+}
+
+.g-icon__icon--vertical {
+  transform: scaleY(-1);
+}
+
+.g-icon__icon--both {
+  transform: scale(-1, -1);
+}

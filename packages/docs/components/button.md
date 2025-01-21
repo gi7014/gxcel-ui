@@ -1,8 +1,4 @@
----
-outline: deep
----
-
-<script setup>
+<script setup lang="ts">
 import { reactive } from 'vue'
 import { GButton, GIcon } from 'gxcel-ui'
 import { AgGridVue } from "ag-grid-vue3"
@@ -76,6 +72,8 @@ const buttonExpose = reactive({
         { attribution:"ref", description:"按钮 html 元素", type: "object", toolTip: "Ref<HTMLButtonElement>"}
     ]
 })
+
+const githubLink = 'https://github.com/gi7014/gxcel-ui/blob/main/packages/components/Button/Button.vue'
 </script>
 
 <style>
@@ -95,7 +93,7 @@ html {
 
 使用 `type`、`plain`、`round` 和 `circle` 来定义按钮的样式。
 
-<play-ground>
+<play-ground :githubLink="githubLink">
   <div class="in-content">
       <g-button>Default</g-button>
       <g-button type="primary">Primary</g-button>
@@ -141,21 +139,24 @@ html {
     <g-button type="info">Info</g-button>
     <g-button type="warning">Warning</g-button>
     <g-button type="danger">Danger</g-button>
-    <br />
+  </div>
+  <div>
     <g-button plain>Plain</g-button>
     <g-button type="primary" plain>Primary</g-button>
     <g-button type="success" plain>Success</g-button>
     <g-button type="info" plain>Info</g-button>
     <g-button type="warning" plain>Warning</g-button>
     <g-button type="danger" plain>Danger</g-button>
-    <br />
+  </div>
+  <div>
     <g-button round>Round</g-button>
     <g-button type="primary" round>Primary</g-button>
     <g-button type="success" round>Success</g-button>
     <g-button type="info" round>Info</g-button>
     <g-button type="warning" round>Warning</g-button>
     <g-button type="danger" round>Danger</g-button>
-    <br />
+  </div>
+  <div>
     <g-button icon="search" circle />
     <g-button type="primary" icon="edit" circle />
     <g-button type="success" icon="check" circle />
@@ -178,7 +179,7 @@ import { GButton } from "gxcel-ui";
 
 使用 `disabled` 属性来控制按钮是否为禁用状态。 该属性接受一个 `Boolean` 类型的值。
 
-<play-ground>
+<play-ground :githubLink="githubLink">
   <div class="in-content">
       <g-button disabled>Default</g-button>
       <g-button type="primary" disabled>Primary</g-button>
@@ -208,7 +209,8 @@ import { GButton } from "gxcel-ui";
     <g-button type="info" disabled>Info</g-button>
     <g-button type="warning" disabled>Warning</g-button>
     <g-button type="danger" disabled>Danger</g-button>
-    <br />
+  </div>
+  <div>
     <g-button plain disabled>Plain</g-button>
     <g-button type="primary" plain disabled>Primary</g-button>
     <g-button type="success" plain disabled>Success</g-button>
@@ -229,7 +231,7 @@ import { GButton } from "gxcel-ui";
 
 没有边框和背景色的按钮。
 
-<play-ground>
+<play-ground :githubLink="githubLink">
     <p>基础文字按钮</p>
     <div class="in-content">
         <g-button
@@ -307,7 +309,7 @@ const buttons = reactive([
 
 使用 `icon` 属性来为按钮添加图标。 您可以在我们的 `Icon` 组件或 [fontawesome](https://fontawesome.com.cn/v5) 图标库中找到所需图标。
 
-<play-ground>
+<play-ground :githubLink="githubLink">
   <div class="in-content">
       <g-button type="primary" icon="edit" />
       <g-button type="primary" icon="share" />
@@ -359,7 +361,7 @@ import { GButton, GIcon } from "gxcel-ui";
 
 :::
 
-<play-ground>
+<play-ground :githubLink="githubLink">
   <div class="in-content">
       <g-button type="primary" loading>Loading</g-button>
       <g-button type="primary" loading-icon="rotate-right" loading>Loading</g-button>
@@ -431,7 +433,7 @@ import { GButton, GIcon } from "gxcel-ui";
 使用 `size` 属性额外配置尺寸，可使用 `large` 和 `small` 两种值。
 使用 `width` 和 `height` 属性可以分别设置按钮宽度和高度。
 
-<play-ground>
+<play-ground :githubLink="githubLink">
   <div class="in-content">
       <g-button size="large">Large</g-button>
       <g-button>Default</g-button>
@@ -463,25 +465,28 @@ import { GButton, GIcon } from "gxcel-ui";
 ```vue
 <template>
   <div>
-    <g-button size="large">Large</g-button>
-    <g-button>Default</g-button>
-    <g-button size="small">Small</g-button>
-    <g-button size="large" icon="search">Large</g-button>
-    <g-button icon="search">Default</g-button>
-    <g-button size="small" icon="search">Small</g-button>
-    <br />
-    <g-button size="large" round>Large</g-button>
-    <g-button round>Default</g-button>
-    <g-button size="small" round>Small</g-button>
-    <g-button size="large" icon="search" round>Large</g-button>
-    <g-button icon="search" round>Default</g-button>
-    <g-button size="small" icon="search" round>Small</g-button>
-    <br />
-    <g-button size="large" icon="search" circle></g-button>
-    <g-button icon="search" circle></g-button>
-    <g-button size="small" icon="search" circle></g-button>
-    <br />
-    <g-button width="200px" height="40px">Width + Height</g-button>
+      <g-button size="large">Large</g-button>
+      <g-button>Default</g-button>
+      <g-button size="small">Small</g-button>
+      <g-button size="large" icon="search">Large</g-button>
+      <g-button icon="search">Default</g-button>
+      <g-button size="small" icon="search">Small</g-button>
+  </div>
+  <div>
+      <g-button size="large" round>Large</g-button>
+      <g-button round>Default</g-button>
+      <g-button size="small" round>Small</g-button>
+      <g-button size="large" icon="search" round>Large</g-button>
+      <g-button icon="search" round>Default</g-button>
+      <g-button size="small" icon="search" round>Small</g-button>
+  </div>
+  <div>
+      <g-button size="large" icon="search" circle></g-button>
+      <g-button icon="search" circle></g-button>
+      <g-button size="small" icon="search" circle></g-button>
+  </div>
+  <div>
+      <g-button width="200px" height="40px">Width + Height</g-button>
   </div>
 </template>
 

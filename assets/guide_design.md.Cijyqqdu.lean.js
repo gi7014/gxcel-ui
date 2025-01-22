@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./chunks/framework.QVhaly_V.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"guide/design.md","filePath":"guide/design.md","lastUpdated":1737549339000}'),s={name:"guide/design.md"};function d(n,r,i,o,c,p){return a(),t("div")}const f=e(s,[["render",d]]);export{m as __pageData,f as default};

@@ -1,6 +1,6 @@
-import { GButton, GIcon } from '@gxcel-ui/components'
+import { GButton, GIcon, GButtonGroup } from '@gxcel-ui/components'
 import type { Plugin } from 'vue'
 
 export default [
-    GButton, GIcon
+    GButton, GIcon, GButtonGroup
 ] as Plugin[]

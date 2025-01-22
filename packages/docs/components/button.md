@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
-import { GButton, GIcon } from 'gxcel-ui'
+import { GButton, GIcon, GButtonGroup } from 'gxcel-ui'
 import { AgGridVue } from "ag-grid-vue3"
 import PlayGround from '../vue-components/PlayGround.vue'
 import { AllCommunityModule, ModuleRegistry } from 'ag-grid-community'
@@ -42,7 +42,7 @@ const buttonAPI = reactive({
         { attribution:"width", description:"按钮宽度", type:"string | number", default:"-" },
         { attribution:"height", description:"按钮高度", type:"string | number", default:"-" },
         { attribution:"icon-size", description:"图标大小", type:"enum", default:"1x", toolTip: '请参照Icon组件的size属性' },
-        { attribution:"animation", description:"按钮动画", type:"enum", default:"scale", toolTip: '"scale" | "heartbeat" | "fly"' },
+        { attribution:"animation", description:"按钮动画", type:"enum", default:"scale", toolTip: '"Default" |"scale" | "heartbeat" | "fly"' },
         { attribution:"autofocus", description:"原生autofocus属性", type:"boolean", default:"-" },
         { attribution:"native-type", description:"原生type属性", type:"enum", default:"-", toolTip: '"button" | "submit" | "reset"'},
     ]
@@ -465,33 +465,154 @@ import { GButton, GIcon } from "gxcel-ui";
 ```vue
 <template>
   <div>
-      <g-button size="large">Large</g-button>
-      <g-button>Default</g-button>
-      <g-button size="small">Small</g-button>
-      <g-button size="large" icon="search">Large</g-button>
-      <g-button icon="search">Default</g-button>
-      <g-button size="small" icon="search">Small</g-button>
+    <g-button size="large">Large</g-button>
+    <g-button>Default</g-button>
+    <g-button size="small">Small</g-button>
+    <g-button size="large" icon="search">Large</g-button>
+    <g-button icon="search">Default</g-button>
+    <g-button size="small" icon="search">Small</g-button>
   </div>
   <div>
-      <g-button size="large" round>Large</g-button>
-      <g-button round>Default</g-button>
-      <g-button size="small" round>Small</g-button>
-      <g-button size="large" icon="search" round>Large</g-button>
-      <g-button icon="search" round>Default</g-button>
-      <g-button size="small" icon="search" round>Small</g-button>
+    <g-button size="large" round>Large</g-button>
+    <g-button round>Default</g-button>
+    <g-button size="small" round>Small</g-button>
+    <g-button size="large" icon="search" round>Large</g-button>
+    <g-button icon="search" round>Default</g-button>
+    <g-button size="small" icon="search" round>Small</g-button>
   </div>
   <div>
-      <g-button size="large" icon="search" circle></g-button>
-      <g-button icon="search" circle></g-button>
-      <g-button size="small" icon="search" circle></g-button>
+    <g-button size="large" icon="search" circle></g-button>
+    <g-button icon="search" circle></g-button>
+    <g-button size="small" icon="search" circle></g-button>
   </div>
   <div>
-      <g-button width="200px" height="40px">Width + Height</g-button>
+    <g-button width="200px" height="40px">Width + Height</g-button>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { GButton, GIcon } from "gxcel-ui";
+</script>
+```
+
+:::
+
+## 按钮动画 <Badge type="warning" text="beta" />
+
+本组件库设计初衷即是为了内置更多丰富的动画，为开发者提供简单又美观的组件。
+按钮组件同样也提供了许多动画 API 可使用。
+
+::: warning 注意
+在使用 `fly` 动画时，请务必提供 `icon` 属性，否则将无法触发动画。
+:::
+
+<play-ground :githubLink="githubLink">
+  <div class="in-content">
+    <g-button animation="default">Default</g-button>
+    <g-button type="primary" animation="default">Default</g-button>
+    <g-button animation="default" round>Default</g-button>
+    <g-button animation="default" icon="search">Default</g-button>
+    <g-button animation="default" icon="search" text></g-button>
+  </div>
+  <div class="in-content">
+    <g-button animation="scale">Scale</g-button>
+    <g-button type="primary" animation="scale">Scale</g-button>
+    <g-button animation="scale" round>Scale</g-button>
+    <g-button animation="scale" icon="search">Scale</g-button>
+    <g-button animation="scale" icon="search" text></g-button>
+  </div>
+  <div class="in-content">
+    <g-button animation="heartbeat">Heartbeat</g-button>
+    <g-button type="primary" animation="heartbeat">Heartbeat</g-button>
+    <g-button animation="heartbeat" round>Heartbeat</g-button>
+    <g-button animation="heartbeat" icon="search">Heartbeat</g-button>
+    <g-button animation="heartbeat" icon="search" text></g-button>
+  </div>
+  <div class="in-content">
+    <p>fly 动画需要配合 icon 使用</P>
+    <g-button animation="fly" icon="search">Fly</g-button>
+    <g-button animation="fly" icon="search" loading>Fly</g-button>
+    <g-button animation="fly" icon="search" disabled>Fly</g-button>
+  </div>
+</play-ground>
+
+::: details 查看源代码
+
+```vue
+<template>
+  <div>
+    <g-button animation="default">Default</g-button>
+    <g-button type="primary" animation="default">Default</g-button>
+    <g-button animation="default" round>Default</g-button>
+    <g-button animation="default" icon="search">Default</g-button>
+    <g-button animation="default" icon="search" text></g-button>
+  </div>
+  <div>
+    <g-button animation="scale">Scale</g-button>
+    <g-button type="primary" animation="scale">Scale</g-button>
+    <g-button animation="scale" round>Scale</g-button>
+    <g-button animation="scale" icon="search">Scale</g-button>
+    <g-button animation="scale" icon="search" text></g-button>
+  </div>
+  <div>
+    <g-button animation="heartbeat">Heartbeat</g-button>
+    <g-button type="primary" animation="heartbeat">Heartbeat</g-button>
+    <g-button animation="heartbeat" round>Heartbeat</g-button>
+    <g-button animation="heartbeat" icon="search">Heartbeat</g-button>
+    <g-button animation="heartbeat" icon="search" text></g-button>
+  </div>
+  <div>
+    <p>fly 动画需要配合 icon 使用</p>
+    <g-button animation="fly" icon="search">Fly</g-button>
+    <g-button animation="fly" icon="search" loading>Fly</g-button>
+    <g-button animation="fly" icon="search" disabled>Fly</g-button>
+  </div>
+</template>
+
+<script lang="ts" setup>
+import { GButton, GIcon } from "gxcel-ui";
+</script>
+```
+
+:::
+
+## 按钮组
+
+以按钮组的方式出现，常用于多项类似操作。
+
+使用 `<g-button-group>` 对多个按钮分组。
+
+<play-ground :githubLink="githubLink">
+  <div class="in-content">
+    <g-button-group>
+      <g-button>Left</g-button>
+      <g-button>Right</g-button>
+    </g-button-group>
+    <g-button-group>
+      <g-button icon="search">Left</g-button>
+      <g-button icon="search">Middle</g-button>
+      <g-button icon="search">Right</g-button>
+    </g-button-group>
+  </div>
+</play-ground>
+
+::: details 查看源代码
+
+```vue
+<template>
+  <g-button-group>
+    <g-button>Left</g-button>
+    <g-button>Right</g-button>
+  </g-button-group>
+  <g-button-group>
+    <g-button icon="search">Left</g-button>
+    <g-button icon="search">Middle</g-button>
+    <g-button icon="search">Right</g-button>
+  </g-button-group>
+</template>
+
+<script lang="ts" setup>
+import { GButton, GIcon, GButtonGroup } from "gxcel-ui";
 </script>
 ```
 

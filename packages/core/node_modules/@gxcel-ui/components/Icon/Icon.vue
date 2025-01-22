@@ -51,6 +51,6 @@ const userCustomStyles = computed(() => ({
     </i>
 </template>
 
-<style>
+<style scoped>
 @import './style.css';
 </style>

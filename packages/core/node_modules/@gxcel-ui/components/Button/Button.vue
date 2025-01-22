@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import type { ButtonProps, ButtonEmits, ButtonInstance } from './types'
-import { ref, computed } from 'vue'
+import { ref, computed, inject } from 'vue'
 import { throttle } from 'lodash-es'
+import { BUTTON_GROUP_KEY } from './contants'
 import GIcon from '../Icon/Icon.vue'
 
 defineOptions({
@@ -28,6 +29,11 @@ const emits = defineEmits<ButtonEmits>()
 
 const _ref = ref<HTMLButtonElement>()
 
+const ctx = inject(BUTTON_GROUP_KEY, void 0)
+const size = computed(() => ctx?.size ?? props?.size ?? "")
+const type = computed(() => ctx?.type ?? props?.type ?? "")
+const disabled = computed(() => ctx?.disabled || props?.disabled || false)
+
 const iconStyle = computed(() => ({
     marginRight: slots.default ? '6px' : '0px'
 }))
@@ -35,10 +41,11 @@ const iconStyle = computed(() => ({
 const customStyles = computed(() => ({
     width: props.width || undefined,
     height: props.height || undefined,
+    pointerEvents: ((disabled.value || props.loading) && (props.tag === 'div')) ? 'none' : ''
 }))
 
 const handleBtnClick = (e: MouseEvent) => emits('click', e)
-const handleBtnClickThrottle = throttle(handleBtnClick, props.throttleDuration)
+const handleBtnClickThrottle = throttle(handleBtnClick, props.throttleDuration, { trailing: false })
 
 defineExpose<ButtonInstance>({
     ref: _ref
@@ -77,6 +84,6 @@ defineExpose<ButtonInstance>({
     </component>
 </template>
 
-<style>
+<style scoped>
 @import './style.css';
 </style>

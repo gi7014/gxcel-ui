@@ -3,7 +3,7 @@ import type { Component, Ref } from "vue";
 export type ButtonType = "primary" | "success" | "warning" | "danger" | "info";
 export type NativeType = "button" | "submit" | "reset";
 export type ButtonSize = "large" | "default" | "small";
-export type ButtonAnimation = "scale" | "heartbeat" | "fly";
+export type ButtonAnimation = "default" | "scale" | "heartbeat" | "fly";
 export type ButtonIconSize =
   | "2xs"
   | "xs"
@@ -42,6 +42,18 @@ export interface ButtonProps {
   throttleDuration?: number;
   width?: string | number;
   height?: string | number;
+}
+
+export interface ButtonGroupProps {
+  type?: ButtonType;
+  size?: ButtonSize;
+  disabled?: boolean;
+}
+
+export interface ButtonGroupContext {
+  type?: ButtonType;
+  size?: ButtonSize;
+  disabled?: boolean;
 }
 
 export interface ButtonEmits {

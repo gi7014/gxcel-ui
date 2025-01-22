@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import 'gxcel-ui/dist/index.css'
+
 import { reactive } from 'vue'
 import { GButton, GIcon, GButtonGroup } from 'gxcel-ui'
 import { AgGridVue } from "ag-grid-vue3"

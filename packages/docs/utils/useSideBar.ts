@@ -8,6 +8,7 @@ export const useSideBar = () => {
         items: [
           { text: "设计", link: "/guide/design" },
           { text: "安装", link: "/guide/install" },
+          { text: "快速开始", link: "/guide/quickstart" }
         ],
         collapsed: false
       },

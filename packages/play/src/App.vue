@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import { GButton } from 'gxcel-ui'
 </script>
 
 <template>
-  <g-button icon="star" animation="heartbeat" text width="40px" height="40px"></g-button>
+  <g-button>Button</g-button>
 </template>

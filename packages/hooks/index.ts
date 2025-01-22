@@ -1,1 +1,1 @@
-export * from './useColorBlender'
+export * from './color/useColorBlender'
